@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'article_view.dart';
+
 class NewsItem extends StatelessWidget {
   final String imgUrl, title, desc, content, postUrl, name;
 
@@ -10,7 +12,10 @@ class NewsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //Navigator.push(context, MaterialPageRoute(builder: (context)=>ArticleView(postUrl)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ArticleView(postUrl: postUrl)));
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 24.0),
@@ -24,30 +29,33 @@ class NewsItem extends StatelessWidget {
                   bottomLeft: Radius.circular(6))),
           child: Row(
             children: <Widget>[
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(title,
-                      maxLines: 2,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold)),
-                  Text(desc,
-                      maxLines: 2,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500)),
-                  SizedBox(height: 16.0),
-                  Text(name,
-                      maxLines: 2,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w500))
-                ],
+              Expanded(
+                flex: 2,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(title,
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold)),
+                    Text(desc,
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w500)),
+                    SizedBox(height: 16.0),
+                    Text(name,
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w500))
+                  ],
+                ),
               ),
               SizedBox(
                 width: 16.0,

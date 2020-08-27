@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutternewsapp/news_by_category.dart';
 
 class CategoryItem extends StatelessWidget {
   String imageUrl, categoryName;
@@ -10,11 +11,11 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        /*Navigator.push(
+        Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    NewsByCategory(categoryName.toLowerCase())));*/
+                    NewsByCategory(categoryName.toLowerCase())));
       },
       child: Container(
         margin: EdgeInsets.only(right: 14.0),

@@ -28,4 +28,5 @@ List<Category> getCategories() {
             "ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&"
             "fit=crop&w=1504&q=80"),
   ];
+  return categeries;
 }
